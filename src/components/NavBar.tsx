@@ -35,8 +35,7 @@ const NavBar = () => {
                   </a>
                 </li>
                 <li>
-                  <select className="hover:text-black text-[#CA5C3B]">
-                    {" "}
+                  <select className="hover:text-black text-[#CA5C3B] bg-[#EADBD7] border-none">
                     <option>More</option>
                     <option>More</option>
                     <option>More</option>
