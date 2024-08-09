@@ -1,5 +1,5 @@
-import React from "react";
-import imgcat from '../assets/Vector.png'
+
+import imgcat from '../assets/Vector.svg'
 
 const CatFoot = () => {
   return (
