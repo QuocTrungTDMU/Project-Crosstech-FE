@@ -1,13 +1,11 @@
-import React from 'react'
-import CardHomePage from '../components/Card/CardHomePage'
-
+import CardHomePage from "../components/Card/CardHomePage";
 
 const HomePage = () => {
   return (
     <div>
-        <CardHomePage/>
+      <CardHomePage />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
