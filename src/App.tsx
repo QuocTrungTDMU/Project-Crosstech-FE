@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import "./App.less";
+import { Button } from "antd";
+import clsx from "clsx";
+import logo from './assets/logo.svg'
+import { LogoIcon } from "./common/icons";
+import { AppButton } from "./components/buttons/AppButton";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [isActive, setActive] = useState<boolean>(false);
+  const [color, setColor] = useState<string>("black")
   return (
-    <>
-      <div className='bg-red-400'>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+    <div className="ABC">
+      <AppButton loading={isActive} onClick={() => console.log("huhu")}>Quoc Trung</AppButton>
+      <Button
+        onClick={() => {
+          setActive(!isActive);
+          setColor(isActive ? "blue" : "red")
+        }}
+      >
+        Panther
+      </Button>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
+      <div className="test">
+        <div
+          className={clsx(
+            isActive ? "bg-slate-400": "bg-blue-300"
+          )}
+        >
+          nội dung
+        </div>
+        <p className="child">
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        <LogoIcon color={color}/>
+        <img src={logo}/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
